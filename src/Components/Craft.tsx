@@ -1,6 +1,6 @@
 import { Toolbox } from "./ToolBox";
 import { SettingsPanel } from "./SettingPannel";
-import { Container } from "./MoveableContainer";
+import { MoveableContainer } from "./MoveableContainer";
 import { Frame, Element } from "@craftjs/core";
 import { MoveableButton } from "./MoveableButton";
 import { MoveableText } from "./MoveableText";
@@ -21,13 +21,12 @@ export default function Craft() {
       <Row>
         <StyledCanvas>
           <Frame>
-            <Element background={"eee"} is={Container} padding={0} canvas>
+            <Element background={"eee"} is={MoveableContainer} padding={0} canvas>
               {/* <Card /> */}
               <MoveableDiv />
               <SelectoDiv />
               <MoveableButton size="small" variant="outlined" text="Click" />
-              <MoveableText fontSize="small" text="Hi world!" />
-              <Element is={Container} padding={2} background="#999" canvas>
+              <Element is={MoveableContainer} padding={2} background="#999" canvas>
                 <MoveableText fontSize="small" text="It's me again!" />
               </Element>
             </Element>

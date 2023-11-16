@@ -7,7 +7,7 @@ import { MoveableText } from "./MoveableText";
 import { MoveableButton } from "./MoveableButton";
 import { Element, useNode } from "@craftjs/core";
 
-import { Container } from "./MoveableContainer";
+import { MoveableContainer } from "./MoveableContainer";
 
 // Notice how CardTop and CardBottom do not specify the drag connector. This is because we won't be using these components as draggables; adding the drag handler would be pointless.
 
@@ -45,8 +45,9 @@ CardBottom.craft = {
 
 export const MoveableCard = ({ background, padding = 20 }: IProps) => {
   return (
-    <Container background={background} padding={padding}>
+    <MoveableContainer background={background} padding={padding}>
       <Element id="text" is={CardTop} canvas>
+        // Canvas Node of type CardTop
         <MoveableText text="Title" fontSize={20} />
         <MoveableText text="Subtitle" fontSize={15} />
       </Element>
@@ -54,6 +55,6 @@ export const MoveableCard = ({ background, padding = 20 }: IProps) => {
         // Canvas Node of type CardBottom
         <MoveableButton size="small" text="Learn more" />
       </Element>
-    </Container>
+    </MoveableContainer>
   );
 };

@@ -9,7 +9,7 @@ interface IProps {
 }
 
 
-export const Container = ({ background, padding = 0, children }: IProps) => {
+export const MoveableContainer = ({ background, padding = 0, children }: IProps) => {
   const {
     connectors: { connect, drag },
   } = useNode();
