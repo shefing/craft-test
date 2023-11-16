@@ -7,7 +7,7 @@ interface IProps {
   text?: string;
   fontSize?: any;
 }
-export const Text = ({ text, fontSize }: IProps) => {
+export const MoveableText = ({ text, fontSize }: IProps) => {
   const {
     connectors: { connect, drag },
     isActive,

@@ -2,31 +2,24 @@ import { useNode } from "@craftjs/core";
 import { useEffect, useRef, useState } from "react";
 import Moveable, { RectInfo } from "react-moveable";
 
-interface IProps {
-  persistData: RectInfo | undefined;
-  setPersistData: (v: any) => void;
-}
-
-export const MoveableDiv = ({ persistData, setPersistData }: IProps) => {
+export const MoveableDiv = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const moveableRef = useRef<Moveable>(null);
   7;
   const [editable, setEditable] = useState(true);
-  // const [persistData, setPersistData] = useState<RectInfo>();
+  const [persistData, setPersistData] = useState<RectInfo>();
   const {
     connectors: { connect, drag },
   } = useNode();
 
-  useEffect(() => {
-    console.log("editable", editable);
-  }, [editable]);
+
 
   useEffect(() => {
     console.log("persistData", persistData);
   }, [persistData]);
 
   return (
-    <div className="root">
+    <div className="rootMoveableElement">
       <div className="container">
         <div
           className="target"

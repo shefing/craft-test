@@ -13,7 +13,7 @@ export const SelectoDiv = () => {
   }
 
   return (
-    <div className="root">
+    <div className="rootMoveableElement">
       <div className="container">
         <Moveable
           ref={moveableRef}

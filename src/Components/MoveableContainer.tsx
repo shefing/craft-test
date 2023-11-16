@@ -1,6 +1,5 @@
-import { Paper } from "@material-ui/core";
 import { useNode } from "@craftjs/core";
-import { ReactElement, JSXElementConstructor, useEffect } from "react";
+import { ReactElement, JSXElementConstructor } from "react";
 import { StyleContainer } from "../Styles/Canvas";
 
 interface IProps {

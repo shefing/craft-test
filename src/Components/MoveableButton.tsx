@@ -12,7 +12,7 @@ interface IProps {
   text?: string;
 }
 
-export const Button = ({ size, variant, color, text }: IProps) => {
+export const MoveableButton = ({ size, variant, color, text }: IProps) => {
   const {
     connectors: { connect, drag },
   } = useNode();
@@ -25,23 +25,3 @@ export const Button = ({ size, variant, color, text }: IProps) => {
   );
 };
 
-// export const Button = ({ size, variant, color, text }: IProps) => {
-//   const {
-//     connectors: { connect, drag },
-//   } = useNode();
-//   return (
-//     <Resizable
-//       style={{
-//         border: "solid 1px #ddd",
-//         background: "#F0F0F0",
-//       }}
-//       defaultSize={{
-//         width: "auto",
-//         height: "auto",
-//       }}
-//       // ref={(ref: any) => connect(drag(ref!))}
-//     >
-//       I'm a resizable and draggable component!
-//     </Resizable>
-//   );
-// };

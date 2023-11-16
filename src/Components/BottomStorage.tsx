@@ -16,11 +16,12 @@ export const BottomStorage = () => {
 
   return (
     <StyledBottomStorage>
-      {images.map((img: any) => {
+      {images.map((img: any, i: number) => {
         return (
           <StyledImg
+            key={i}
             src={img.src}
-            ref={(ref: any) => connectors.create(ref, <img src={img.src} style={{  height: "120px", width: "120px" }}></img>)}
+            ref={(ref: any) => connectors.create(ref, <img src={img.src} style={{ height: "120px", width: "120px" }}></img>)}
             alt={img.name}
           />
         );

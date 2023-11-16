@@ -1,33 +1,13 @@
-// import { Text } from "./Text";
-// import { Button } from "./Button";
-// import { Container } from "./Container";
-
 interface IProps {
   background?: any;
   padding?: any;
 }
 
-// export const Card = ({ background, padding = 20 }: IProps) => {
-//   return (
-//     <Container background={background} padding={padding}>
-//       <Element id="text" canvas> // Canvas Node of type div
-//         <Text text="Title" fontSize={20} />
-//         <Text text="Subtitle" fontSize={15} />
-//       </Element>
-//       <Element id="buttons" canvas> // Canvas Node of type div
-//         <Button size="small" text="Learn more" />
-//       </Element>
-//     </Container>
-//   );
-// };
-
-// components/user/Card.js
-import React from "react";
-import { Text } from "./Text";
-import { Button } from "./Button";
+import { MoveableText } from "./MoveableText";
+import { MoveableButton } from "./MoveableButton";
 import { Element, useNode } from "@craftjs/core";
 
-import { Container } from "./Container";
+import { Container } from "./MoveableContainer";
 
 // Notice how CardTop and CardBottom do not specify the drag connector. This is because we won't be using these components as draggables; adding the drag handler would be pointless.
 
@@ -53,11 +33,7 @@ export const CardBottom = ({ children }: any) => {
   const {
     connectors: { connect },
   } = useNode();
-  return (
-    <div  ref={connect!}>
-      {children}
-    </div>
-  );
+  return <div ref={connect!}>{children}</div>;
 };
 
 CardBottom.craft = {
@@ -67,17 +43,16 @@ CardBottom.craft = {
   },
 };
 
-export const Card = ({ background, padding = 20 }: IProps) => {
+export const MoveableCard = ({ background, padding = 20 }: IProps) => {
   return (
     <Container background={background} padding={padding}>
       <Element id="text" is={CardTop} canvas>
-        // Canvas Node of type CardTop
-        <Text text="Title" fontSize={20} />
-        <Text text="Subtitle" fontSize={15} />
+        <MoveableText text="Title" fontSize={20} />
+        <MoveableText text="Subtitle" fontSize={15} />
       </Element>
       <Element id="buttons" is={CardBottom} canvas>
         // Canvas Node of type CardBottom
-        <Button size="small" text="Learn more" />
+        <MoveableButton size="small" text="Learn more" />
       </Element>
     </Container>
   );

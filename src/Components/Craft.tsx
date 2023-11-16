@@ -1,9 +1,9 @@
 import { Toolbox } from "./ToolBox";
 import { SettingsPanel } from "./SettingPannel";
-import { Container } from "./Container";
+import { Container } from "./MoveableContainer";
 import { Frame, Element } from "@craftjs/core";
-import { Button } from "./Button";
-import { Text } from "./Text";
+import { MoveableButton } from "./MoveableButton";
+import { MoveableText } from "./MoveableText";
 import { BottomStorage } from "./BottomStorage";
 import { Row } from "../Styles/FlexDisplay";
 import { StyledCanvas, StyledSideStorage, StyledAssetContainer } from "../Styles/Canvas";
@@ -13,7 +13,7 @@ import { SelectoDiv } from "./SelectoDiv";
 import { useState } from "react";
 import { RectInfo } from "react-moveable";
 export default function Craft() {
-  const [persistData, setPersistData] = useState<RectInfo>({ });
+  const [persistData, setPersistData] = useState<RectInfo>({});
 
   return (
     <StyledAssetContainer>
@@ -21,14 +21,14 @@ export default function Craft() {
       <Row>
         <StyledCanvas>
           <Frame>
-            <Element is={Container} padding={0} canvas>
+            <Element background={"eee"} is={Container} padding={0} canvas>
               {/* <Card /> */}
-              <MoveableDiv persistData={persistData} setPersistData={setPersistData} />
+              <MoveableDiv />
               <SelectoDiv />
-              <Button size="small" variant="outlined" text="Click" />
-              <Text fontSize="small" text="Hi world!" />
+              <MoveableButton size="small" variant="outlined" text="Click" />
+              <MoveableText fontSize="small" text="Hi world!" />
               <Element is={Container} padding={2} background="#999" canvas>
-                <Text fontSize="small" text="It's me again!" />
+                <MoveableText fontSize="small" text="It's me again!" />
               </Element>
             </Element>
           </Frame>
